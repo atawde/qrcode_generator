@@ -46,13 +46,13 @@ def generate_qr():
             data["policy-number"] = request.form.get('polnum')
             
 
-            generate_qr()
+            generate_qrcode()
 #        return f'Processing QR for {data["name"]}'
 #            return send_file(generate_qr(), mimetype='image/png')
 #            return send_file('my_qrcode.png', mimetype='image/png')
             return render_template('qr_details.html', img_file="my_qrcode.png")
 
-def generate_qr():
+def generate_qrcode():
 # Create QR code object
     qr = qrcode.QRCode(
         version=1,  # controls the size of the QR code
