@@ -67,7 +67,8 @@ def generate_qr():
 #    pil_img = Image.open('my_qrcode.png')
 #    pil_img.show()
 
-#if __name__== "__main__":
+if __name__== "__main__":
+        app.run()
 #    main()
 
 """
@@ -133,3 +134,4 @@ image.show()  # To display the image if needed
 # Alternatively, if you only want to just display/save the image, this is sufficient
 image.save("decoded_qr.png")
 """
+
