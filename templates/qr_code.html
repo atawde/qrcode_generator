@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Personalized QR Code Generator</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" >
+        <!-- link rel="stylesheet" href="style.css" --> 
+    </head>
+    <body>
+        <div class="header"><h1>This is your personalized QR Code</h1><br></div>
+
+        <div class="grid-container">
+
+            <div class="sidebar1"></div>
+
+            <div class="form-content">
+                <img src="{{ url_for('static', filename='my_qrcode.png') }}" alt="your QR code image" width="250" height="250" style="display: block; margin: auto;">
+                <br>
+                <p><b>Take a print of this QR Code Image and :</b></p>
+                <ul>
+                    <li>Paste it at the back of your mobile</li>
+                    <li>Keep in your wallet / purse</li>
+                    <li>Laminate and keep in your vehicle</li>
+                    <li>Make the image as splash screen / wallpaper of your mobile</li>
+                </ul>
+                <p><b>In case of emergency, people around you can scan this QR and know your name, emergency contact, any medical condition you have etc.</b></p>    
+                <p><b>This can alert your immediate family and you will get proper medical care immediately</b></p>
+            </div>
+
+            <div class="sidebar2"></div>
+        </div>
+
+        <div class="footer"></div>
+    </body>
+</html>

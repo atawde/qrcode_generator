@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Personalized QR Code Generator</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" >
+        <!-- link rel="stylesheet" href="style.css" --> 
+    </head>
+    <body>
+        <div class="grid-container">
+
+            <div class="header"><h1>Please fill up the below form to create a personalized QR Code</h1></div>
+
+            <div class="sidebar1"></div>
+
+            <div class="form-content">
+                <form action="/submit-form" method="POST" onsubmit="showImage()">
+                <!-- Text Input -->
+                <input type="text" id="name" name="name" required size="53" placeholder="Your name"><br><br>
+
+                <textarea id="address" name="address" rows="4" cols="50" placeholder="Your address"></textarea><br><br>
+
+                <div class="contact-no">
+                    <!-- label for="mobile">Mobile:</label -->
+                    <input type="text" id="mobile" name="mobile" required size="21" placeholder="mobile number">
+
+                    <!-- label for="landl">Land Line:</label -->
+                    <input type="text" id="landl" name="landl" size="21" placeholder="landline">
+                </div>
+                <br>
+                <div class="contact-no">
+                    <!-- label for="emer1">Emergency Contact #1:</label -->
+                    <input type="text" id="emer1" name="emer1" required size="21" placeholder="Emergency contact#">
+                    <!-- label for="emer2">#2 (optional):</label -->
+                    <input type="text" id="emer2" name="emer2" size="21" placeholder="Additional emergency#">
+                </div>
+                <br><br>
+                <div class="med">
+                    <input type="text" id="bgrp" name="bgrp" size="10" placeholder="blood group">
+                    <input type="text" id="insp" name="insp" size="20" placeholder="Health insurance provider">
+                    <input type="text" id="polnum" name="polnum" size="10" placeholder="policy#">
+                </div>
+                <br>
+                <textarea id="medh" name="medh" rows="4" cols="50" placeholder="Important medical conditions / allergies"></textarea><br><br>
+
+                <!-- Submit Button -->
+                <button type="submit" class="submit-btn">Generate QR Code</button>
+                </form>
+            </div>
+
+            <div class="qr-code">
+                <img src="{{url_for('static', filename=img_file)}}" hidden id="qrcode" alt="your QR code image will appear here" width="200" height="200" style="display: block; margin: auto;">
+                <br>
+                <p><b>Take a print of this QR Code Image and :</b></p>
+                <ul>
+                    <li>Paste it at the back of your mobile</li>
+                    <li>Keep in your wallet / purse</li>
+                    <li>Laminate and keep in your vehicle</li>
+                    <li>Make the image as splash screen / wallpaper of your mobile</li>
+                </ul>
+                <p><b>In case of emergency, people around you can scan this QR and know your name, emergency contact, any medical condition you have etc.</b></p>    
+                <p><b>They can alert your immediate family and you will get proper medical care immediately</b></p>
+            </div>
+
+            <div class="sidebar2"></div>
+
+            <div class="footer"><h2><i>this website does not store your personal data and does not share with any third party</i></h2></div>
+
+        </div>
+
+    </body>
+</html>
