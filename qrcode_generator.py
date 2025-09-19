@@ -47,7 +47,7 @@ def generate_qr():
             generate_qrcode()
             return render_template('qr_details.html', img_file="my_qrcode.png")
         
-        return render_template('qr_details.html', img_file="my_qrcode.png")  #for Get method display the same form
+        return render_template('qr_details.html', img_file="placeholder.png")  #for Get method display the same form
 
 @app.errorhandler(500)
 def handle_internal_error(e):
